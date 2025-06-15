@@ -1,32 +1,31 @@
 <sdf version='1.6'>
-  <world name='etrobo_world'>
-    <model name='ground_plane'>
-      <static>true</static>
-      <link name='link'>
-        <collision name='collision'>
-          <geometry>
-            <plane>
-              <normal>0 0 1</normal>
-              <size>10 20</size> <!-- 実際のコースサイズに合わせ調整 -->
-            </plane>
-          </geometry>
-        </collision>
-        <visual name='visual'>
-          <geometry>
-            <plane>
-              <normal>0 0 1</normal>
-              <size>5.43 3.66</size>
-            </plane>
-          </geometry>
-          <material>
-            <script>
-              <uri>model://etrobo_course/materials/scripts/gazebo.material</uri>
-              <name>Gazebo/CourseTexture</name>
-            </script>
-          </material>
-        </visual>
-      </link>
-    </model>
-  </world>
+  <model name='etrobo_course'>
+    <static>true</static>
+    <link name='ground_plane_link'>
+      <collision name='ground_plane_collision'>
+        <geometry>
+          <plane>
+            <normal>0 0 1</normal>
+            <size>5.43 3.66</size>
+          </plane>
+        </geometry>
+      </collision>
+      <visual name='ground_plane_visual'>
+        <geometry>
+          <plane>
+            <normal>0 0 1</normal>
+            <size>5.43 3.66</size>
+          </plane>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://etrobo_course/materials/textures</uri>
+            <uri>model://etrobo_course/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/CourseTexture</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+  </model>
 </sdf>
 
