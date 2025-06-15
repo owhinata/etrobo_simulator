@@ -1,0 +1,15 @@
+material Gazebo/CourseTexture
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture 2025_competition_course_50pct_v0.9.png
+        scale 1 1
+      }
+    }
+  }
+}
+

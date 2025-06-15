@@ -1,0 +1,4 @@
+_this_package_prefix=$(builtin cd "`dirname "${BASH_SOURCE[0]}"`/../.." && pwd)
+export GAZEBO_MODEL_PATH=$_this_package_prefix/@PROJECT_NAME@/models:$GAZEBO_MODEL_PATH
+export GAZEBO_RESOURCE_PATH=$_this_package_prefix/@PROJECT_NAME@/models:$GAZEBO_RESOURCE_PATH
+
