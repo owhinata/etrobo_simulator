@@ -1,4 +1,4 @@
-material Gazebo/CourseTexture
+material course
 {
   technique
   {
