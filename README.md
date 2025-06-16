@@ -1,7 +1,7 @@
 # etrobo_simulator
 ros2 etrobo simulator
 
-'''
+```
 . /opt/ros/humble/setup.bash
 . /usr/share/gazebo/setup.bash
 colcon build --symlink-install
