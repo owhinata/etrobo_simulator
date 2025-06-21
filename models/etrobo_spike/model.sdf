@@ -61,13 +61,19 @@
             <far>0.30</far>
           </clip>
         </camera>
-        <plugin name="gazebo_ros_color_sensor" filename="libgazebo_ros_camera.so">
+        <plugin name="gazebo_ros_camera" filename="libgazebo_ros_camera.so">
           <ros>
-            <namespace>/</namespace>
-            <remapping>image_raw:=color_sensor/image_raw</remapping>
-            <remapping>camera_info:=color_sensor/camera_info</remapping>
+            <namespace>/color_sensor</namespace>
+            <remapping>image_raw:=image</remapping>
+            <remapping>camera_info:=camera_info</remapping>
           </ros>
           <frame_name>color_sensor_link</frame_name>
+        </plugin>
+        <plugin name="gazebo_ros_color_sensor" filename="libgazebo_ros_color_sensor.so">
+          <ros>
+            <namespace>/color_sensor</namespace>
+            <remapping>color:=color</remapping>
+          </ros>
         </plugin>
       </sensor>
     </link>
@@ -203,7 +209,7 @@
     <joint name="caster_back_joint" type="fixed">
       <parent>base_link</parent>
       <child>caster_back_link</child>
-      <pose>0 0 0 0 0 0</pose>
+      <pose>-0.15 0 0.05 0 0 0</pose>
     </joint>
 
     <link name="caster_back_link">
@@ -280,3 +286,4 @@
     </plugin>      
   </model>
 </sdf>
+

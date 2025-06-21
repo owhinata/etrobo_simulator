@@ -30,16 +30,27 @@ find_package(gazebo_ros REQUIRED)
 find_package(gazebo_dev REQUIRED)
 find_package(gazebo REQUIRED)
 find_package(std_msgs REQUIRED)
+find_package(OpenCV REQUIRED)
+
+# If cv_bridge is available, optionally add it; comment out if not present
+# find_package(cv_bridge REQUIRED)
+
+# Add OpenCV include directories
+include_directories(
+  ${OpenCV_INCLUDE_DIRS}
+)
 
 target_include_directories(gazebo_ros_color_sensor PUBLIC
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
   $<INSTALL_INTERFACE:include>
+  ${OpenCV_INCLUDE_DIRS}
 )
 target_link_libraries(gazebo_ros_color_sensor
   ${GAZEBO_LIBRARIES}
+  ${OpenCV_LIBS}
 )
 target_compile_definitions(gazebo_ros_color_sensor PUBLIC "PLUGINLIB__DISABLE_BOOST_FUNCTIONS")
-ament_target_dependencies(gazebo_ros_color_sensor rclcpp sensor_msgs gazebo_ros std_msgs)
+ament_target_dependencies(gazebo_ros_color_sensor rclcpp sensor_msgs gazebo_ros std_msgs OpenCV)
 
 install(TARGETS gazebo_ros_color_sensor
   ARCHIVE DESTINATION lib
@@ -60,4 +71,9 @@ if(BUILD_TESTING)
 endif()
 
 ament_package()
+
+
+
+
+
 

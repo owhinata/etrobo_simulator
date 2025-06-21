@@ -10,6 +10,7 @@ ROS2 + Gazebo simulation environment for ET Robocon.
 ## Build
 ```bash
 source /opt/ros/humble/setup.bash
+rosdep install --from-paths src --ignore-src -r -y
 colcon build --symlink-install
 source install/setup.bash
 ```
@@ -31,3 +32,4 @@ ros2 launch etrobo_simulator empty_world.launch.py x_pose:=1.0 y_pose:=2.0
 ```bash
 colcon test --packages-select etrobo_simulator
 ```
+
