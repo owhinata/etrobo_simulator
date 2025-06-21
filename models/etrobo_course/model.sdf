@@ -33,6 +33,7 @@
             <uri>model://etrobo_course/materials/scripts</uri>
             <name>course</name>
           </script>
+          <ambient>1 1 1 1</ambient>
         </material>
       </visual>
     </link>

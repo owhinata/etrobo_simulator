@@ -11,6 +11,7 @@
     </include>
 
     <scene>
+      <ambient>0.707106781 0.707106781 0.707106781 0.707106781</ambient>
       <shadows>true</shadows>
     </scene>
 
