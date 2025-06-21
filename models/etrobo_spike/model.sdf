@@ -63,9 +63,9 @@
         </camera>
         <plugin name="gazebo_ros_camera" filename="libgazebo_ros_camera.so">
           <ros>
-            <namespace>/color_sensor</namespace>
-            <remapping>image_raw:=image</remapping>
-            <remapping>camera_info:=camera_info</remapping>
+          <namespace>/</namespace>
+          <remapping>image_raw:=color_sensor/image_raw</remapping>
+          <remapping>camera_info:=color_sensor/camera_info</remapping>
           </ros>
           <frame_name>color_sensor_link</frame_name>
         </plugin>
