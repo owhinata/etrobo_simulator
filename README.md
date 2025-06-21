@@ -16,16 +16,16 @@ source install/setup.bash
 ```
 
 ## Launch simulation
-The `empty_world.launch.py` file loads `worlds/etrobo_world.world` and spawns the Spike robot model. Environment hooks automatically configure `GAZEBO_MODEL_PATH` and `GAZEBO_RESOURCE_PATH`.
+The `etrobo_world.launch.py` file loads `worlds/etrobo_world.world` and spawns the Spike robot model. Environment hooks automatically configure `GAZEBO_MODEL_PATH` and `GAZEBO_RESOURCE_PATH`.
 
 ```bash
 source /usr/share/gazebo/setup.bash
-ros2 launch etrobo_simulator empty_world.launch.py
+ros2 launch etrobo_simulator etrobo_world.launch.py
 ```
 
 You can adjust the spawn position using `x_pose` and `y_pose` launch arguments:
 ```bash
-ros2 launch etrobo_simulator empty_world.launch.py x_pose:=1.0 y_pose:=2.0
+ros2 launch etrobo_simulator etrobo_world.launch.py x_pose:=1.0 y_pose:=2.0
 ```
 
 ## Test
