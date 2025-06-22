@@ -6,27 +6,27 @@
   <joint name="base_joint" type="fixed">
     <parent link="base_footprint"/>
     <child link="base_link"/>
-    <origin xyz="0 0 0.01" rpy="0 0 0"/>
+    <origin xyz="0 0 0.083853" rpy="0 0 0"/>
   </joint>
 
   <link name="base_link">
     <inertial>
-      <origin xyz="-0.05 0 0.1" rpy="0 0 0"/>
-      <mass value="5.0"/>
-      <inertia ixx="0.042" ixy="0.0" ixz="0.0" iyy="0.042" iyz="0.0" izz="0.075"/>
+      <origin xyz="-0.075867 0 0.083853" rpy="0 0 0"/>
+      <mass value="1.0"/>
+      <inertia ixx="0.00212" ixy="0.0" ixz="0.0" iyy="0.00486" iyz="0.0" izz="0.00391"/>
     </inertial>
 
     <collision>
-      <origin xyz="-0.05 0 0.1" rpy="0 0 0"/>
+      <origin xyz="-0.075867 0 0.083853" rpy="0 0 0"/>
       <geometry>
-        <box size="0.3 0.3 0.1"/>
+        <box size="0.19965 0.083846 0.135762"/>
       </geometry>
     </collision>
 
     <visual>
-      <origin xyz="-0.05 0 0.1" rpy="0 0 0"/>
+      <origin xyz="-0.075867 0 0.083853" rpy="0 0 0"/>
       <geometry>
-        <box size="0.3 0.3 0.1"/>
+        <box size="0.19965 0.083846 0.135762"/>
       </geometry>
     </visual>
   </link>
@@ -34,28 +34,28 @@
   <joint name="wheel_left_joint" type="continuous">
     <parent link="base_link"/>
     <child link="wheel_left_link"/>
-    <origin xyz="0 0.18 0.072" rpy="0 0 0"/>
+    <origin xyz="0 0.043423 0.028" rpy="0 0 0"/>
     <axis xyz="0 1 0"/>
   </joint>
 
   <link name="wheel_left_link">
     <inertial>
-      <origin xyz="0 0.18 0.072" rpy="1.5707 0 0"/>
-      <mass value="0.2"/>
-      <inertia ixx="0.00026" ixy="0.0" ixz="0.0" iyy="0.00026" iyz="0.0" izz="0.00052"/>
+      <origin xyz="0 0.051909 0.028" rpy="1.5707 0 0"/>
+      <mass value="0.1"/>
+      <inertia ixx="0.000022" ixy="0.0" ixz="0.0" iyy="0.000022" iyz="0.0" izz="0.000039"/>
     </inertial>
 
     <collision>
-      <origin xyz="0 0.18 0.072" rpy="1.5707 0 0"/>
+      <origin xyz="0 0.051909 0.028" rpy="1.5707 0 0"/>
       <geometry>
-        <cylinder radius="0.072" length="0.04"/>
+        <cylinder radius="0.028" length="0.015972"/>
       </geometry>
     </collision>
 
     <visual>
-      <origin xyz="0 0.18 0.072" rpy="1.5707 0 0"/>
+      <origin xyz="0 0.051909 0.028" rpy="1.5707 0 0"/>
       <geometry>
-        <cylinder radius="0.072" length="0.04"/>
+        <cylinder radius="0.028" length="0.015972"/>
       </geometry>
       <!-- マテリアル省略：URDFではOGREマテリアルは基本非対応（rviz色指定可）-->
     </visual>
@@ -64,28 +64,28 @@
   <joint name="wheel_right_joint" type="continuous">
     <parent link="base_link"/>
     <child link="wheel_right_link"/>
-    <origin xyz="0 -0.18 0.072" rpy="0 0 0"/>
+    <origin xyz="0 -0.043423 0.028" rpy="0 0 0"/>
     <axis xyz="0 1 0"/>
   </joint>
 
   <link name="wheel_right_link">
     <inertial>
-      <origin xyz="0 -0.18 0.072" rpy="1.5707 0 0"/>
-      <mass value="0.2"/>
-      <inertia ixx="0.00026" ixy="0.0" ixz="0.0" iyy="0.00026" iyz="0.0" izz="0.00052"/>
+      <origin xyz="0 -0.051909 0.028" rpy="1.5707 0 0"/>
+      <mass value="0.1"/>
+      <inertia ixx="0.000022" ixy="0.0" ixz="0.0" iyy="0.000022" iyz="0.0" izz="0.000039"/>
     </inertial>
 
     <collision>
-      <origin xyz="0 -0.18 0.072" rpy="1.5707 0 0"/>
+      <origin xyz="0 -0.051909 0.028" rpy="1.5707 0 0"/>
       <geometry>
-        <cylinder radius="0.072" length="0.04"/>
+        <cylinder radius="0.028" length="0.015972"/>
       </geometry>
     </collision>
 
     <visual>
-      <origin xyz="0 -0.18 0.072" rpy="1.5707 0 0"/>
+      <origin xyz="0 -0.051909 0.028" rpy="1.5707 0 0"/>
       <geometry>
-        <cylinder radius="0.072" length="0.04"/>
+        <cylinder radius="0.028" length="0.015972"/>
       </geometry>
     </visual>
   </link>
@@ -93,27 +93,27 @@
   <joint name="caster_back_joint" type="fixed">
     <parent link="base_link"/>
     <child link="caster_back_link"/>
-    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <origin xyz="-0.143748 0 0.015972" rpy="0 0 0"/>
   </joint>
 
   <link name="caster_back_link">
     <inertial>
-      <origin xyz="-0.15 0 0.05" rpy="0 0 0"/>
-      <mass value="0.1"/>
+      <origin xyz="-0.143748 0 0.015972" rpy="0 0 0"/>
+      <mass value="0.01"/>
       <inertia ixx="0.000001" ixy="0.0" ixz="0.0" iyy="0.000001" iyz="0.0" izz="0.000001"/>
     </inertial>
 
     <collision>
-      <origin xyz="-0.15 0 0.05" rpy="0 0 0"/>
+      <origin xyz="-0.143748 0 0.015972" rpy="0 0 0"/>
       <geometry>
-        <sphere radius="0.05"/>
+        <sphere radius="0.015972"/>
       </geometry>
     </collision>
 
     <visual>
-      <origin xyz="-0.15 0 0.05" rpy="0 0 0"/>
+      <origin xyz="-0.143748 0 0.015972" rpy="0 0 0"/>
       <geometry>
-        <sphere radius="0.05"/>
+        <sphere radius="0.015972"/>
       </geometry>
     </visual>
   </link>

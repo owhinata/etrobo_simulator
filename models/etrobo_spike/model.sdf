@@ -8,57 +8,63 @@
     <joint name="base_joint" type="fixed">
       <parent>base_footprint</parent>
       <child>base_link</child>
-      <pose>0.0 0.0 0.08 0 0 0</pose>
+      <pose>0.0 0.0 0.083853 0 0 0</pose>
     </joint>
 
     <link name="base_link">
       <inertial>
-        <pose>-0.05 0 0.1 0 0 0</pose>
-        <mass>5.0</mass>
+        <pose>-0.075867 0 0.083853 0 0 0</pose>
+        <mass>1.0</mass>
         <inertia>
-          <ixx>0.042</ixx>
+          <ixx>0.00212</ixx>
           <ixy>0.0</ixy>
           <ixz>0.0</ixz>
-          <iyy>0.042</iyy>
+          <iyy>0.00486</iyy>
           <iyz>0.0</iyz>
-          <izz>0.075</izz>
+          <izz>0.00391</izz>
         </inertia>
       </inertial>
 
       <collision name="base_collision">
-        <pose>-0.05 0 0.1 0 0 0</pose>
+        <pose>-0.075867 0 0.083853 0 0 0</pose>
         <geometry>
           <box>
-            <size>0.3 0.3 0.1</size>
+            <size>0.19965 0.083846 0.135762</size>
           </box>
         </geometry>
       </collision>
 
       <visual name="base_visual">
-        <pose>-0.05 0 0.1 0 0 0</pose>
+        <pose>-0.075867 0 0.083853 0 0 0</pose>
         <geometry>
           <box>
-            <size>0.3 0.3 0.1</size>
+            <size>0.19965 0.083846 0.135762</size>
           </box>
         </geometry>
+        <material>
+          <script>
+            <!--uri>file://media/materials/scripts/gazebo.material</uri-->
+            <name>Gazebo/Turquoise</name>
+          </script>
+        </material>
       </visual>
 
       <!-- Color sensor (downward facing, front) -->
       <sensor name="color_sensor" type="camera">
-        <pose>0.13 0 0.01 0 1.570796327 0</pose> <!-- X:前方 Y:中央 Z:地面から2.1cm下向き、RPY:Y軸下向き -->
+        <pose>0.023958 0 0.015972 0 1.570796327 0</pose> <!-- X:前方 Y:中央 Z:地面から1.6cm下向き、RPY:Y軸下向き -->
         <always_on>1</always_on>
         <visualize>false</visualize>
         <update_rate>100</update_rate>
         <camera>
           <horizontal_fov>0.01</horizontal_fov>
           <image>
-            <width>15</width>
-            <height>15</height>
+            <width>16</width>
+            <height>16</height>
             <format>R8G8B8</format>
           </image>
           <clip>
-            <near>0.008</near>
-            <far>0.30</far>
+            <near>0.007986</near>
+            <far>0.023958</far>
           </clip>
         </camera>
         <!--plugin name="gazebo_ros_camera" filename="libgazebo_ros_camera.so">
@@ -81,7 +87,7 @@
     <joint name="wheel_left_joint" type="revolute">
       <parent>base_link</parent>
       <child>wheel_left_link</child>
-      <pose>0 0.18 0.072 0 0 0</pose>
+      <pose>0 0.043423 0.028 0 0 0</pose>
       <axis>
         <xyz>0 1 0</xyz>
       </axis>
@@ -89,24 +95,24 @@
 
     <link name="wheel_left_link">
       <inertial>
-        <pose>0 0.18 0.072 1.5707 0 0</pose>
-        <mass>0.2</mass>
+        <pose>0 0.051909 0.028 1.5707 0 0</pose>
+        <mass>0.1</mass>
         <inertia>
-          <ixx>0.00026</ixx>
+          <ixx>0.000022</ixx>
           <ixy>0.0</ixy>
           <ixz>0.0</ixz>
-          <iyy>0.00026</iyy>
+          <iyy>0.000022</iyy>
           <iyz>0.0</iyz>
-          <izz>0.00052</izz>
+          <izz>0.000039</izz>
         </inertia>
       </inertial>
 
       <collision name="collision">
-        <pose>0 0.18 0.072 1.5707 0 0</pose>
+        <pose>0 0.051909 0.028 1.5707 0 0</pose>
         <geometry>
           <cylinder>
-            <radius>0.072</radius>
-            <length>0.04</length>
+            <radius>0.028</radius>
+            <length>0.015972</length>
           </cylinder>
         </geometry>
         <surface>
@@ -126,16 +132,16 @@
       </collision>
 
       <visual name="visual">
-        <pose>0 0.18 0.072 1.5707 0 0</pose>
+        <pose>0 0.051909 0.028 1.5707 0 0</pose>
         <geometry>
           <cylinder>
-            <radius>0.072</radius>
-            <length>0.04</length>
+            <radius>0.028</radius>
+            <length>0.015972</length>
           </cylinder>
         </geometry>
         <material>
           <script>
-            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <!--uri>file://media/materials/scripts/gazebo.material</uri-->
             <name>Gazebo/Red</name>
           </script>
         </material>
@@ -145,7 +151,7 @@
     <joint name="wheel_right_joint" type="revolute">
       <parent>base_link</parent>
       <child>wheel_right_link</child>
-      <pose>0 -0.18 0.072 0 0 0</pose>
+      <pose>0 -0.043423 0.028 0 0 0</pose>
       <axis>
         <xyz>0 1 0</xyz>
       </axis>
@@ -153,24 +159,24 @@
 
     <link name="wheel_right_link">
       <inertial>
-        <pose>0 -0.18 0.072 1.5707 0 0</pose>
-        <mass>0.2</mass>
+        <pose>0 -0.051909 0.028 1.5707 0 0</pose>
+        <mass>0.1</mass>
         <inertia>
-          <ixx>0.00026</ixx>
+          <ixx>0.000022</ixx>
           <ixy>0.0</ixy>
           <ixz>0.0</ixz>
-          <iyy>0.00026</iyy>
+          <iyy>0.000022</iyy>
           <iyz>0.0</iyz>
-          <izz>0.00052</izz>
+          <izz>0.000039</izz>
         </inertia>
       </inertial>
 
       <collision name="collision">
-        <pose>0 -0.18 0.072 1.5707 0 0</pose>
+        <pose>0 -0.051909 0.028 1.5707 0 0</pose>
         <geometry>
           <cylinder>
-            <radius>0.072</radius>
-            <length>0.04</length>
+            <radius>0.028</radius>
+            <length>0.015972</length>
           </cylinder>
         </geometry>
         <surface>
@@ -190,16 +196,16 @@
       </collision>
 
       <visual name="visual">
-        <pose>0 -0.18 0.072 1.5707 0 0</pose>
+        <pose>0 -0.051909 0.028 1.5707 0 0</pose>
         <geometry>
           <cylinder>
-            <radius>0.072</radius>
-            <length>0.04</length>
+            <radius>0.028</radius>
+            <length>0.015972</length>
           </cylinder>
         </geometry>
         <material>
           <script>
-            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <!--uri>file://media/materials/scripts/gazebo.material</uri-->
             <name>Gazebo/Red</name>
           </script>
         </material>
@@ -209,13 +215,13 @@
     <joint name="caster_back_joint" type="fixed">
       <parent>base_link</parent>
       <child>caster_back_link</child>
-      <pose>-0.15 0 0.05 0 0 0</pose>
+      <pose>-0.143748 0 0.015972 0 0 0</pose>
     </joint>
 
     <link name="caster_back_link">
       <inertial>
-        <pose>-0.15 0 0.05 0 0 0</pose>
-        <mass>0.1</mass>
+        <pose>-0.143748 0 0.015972 0 0 0</pose>
+        <mass>0.01</mass>
         <inertia>
           <ixx>0.000001</ixx>
           <ixy>0.0</ixy>
@@ -227,10 +233,10 @@
       </inertial>
 
       <collision name="collision">
-        <pose>-0.15 0 0.05 0 0 0</pose>
+        <pose>-0.143748 0 0.015972 0 0 0</pose>
         <geometry>
           <sphere>
-            <radius>0.05</radius>
+            <radius>0.015972</radius>
           </sphere>
         </geometry>
         <surface>
@@ -250,22 +256,22 @@
       </collision>
 
       <visual name="visual">
-        <pose>-0.15 0 0.05 0 0 0</pose>
+        <pose>-0.143748 0 0.015972 0 0 0</pose>
         <geometry>
           <sphere>
-            <radius>0.05</radius>
+            <radius>0.015972</radius>
           </sphere>
         </geometry>
       </visual>
     </link>
 
     <plugin name="differential_drive_controller" filename="libgazebo_ros_diff_drive.so">
-      <update_rate>30</update_rate>
+      <update_rate>100</update_rate>
       <left_joint>wheel_left_joint</left_joint>
       <right_joint>wheel_right_joint</right_joint>
-      <wheel_separation>0.36</wheel_separation>
-      <wheel_diameter>0.144</wheel_diameter>
-      <max_wheel_torque>5.0</max_wheel_torque>
+      <wheel_separation>0.103818</wheel_separation>
+      <wheel_diameter>0.028</wheel_diameter>
+      <max_wheel_torque>0.18</max_wheel_torque>
       <max_wheel_acceleration>30</max_wheel_acceleration>
       <publish_odom>true</publish_odom>
       <publish_odom_tf>true</publish_odom_tf>
