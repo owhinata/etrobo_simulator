@@ -1,12 +1,13 @@
-_this_package_prefix=$(builtin cd "`dirname "${BASH_SOURCE[0]}"`/../.." && pwd)
-if [[ ":$GAZEBO_MODEL_PATH:" != *":$_this_package_prefix/@PROJECT_NAME@/models:"* ]]; then
-  export GAZEBO_MODEL_PATH=$_this_package_prefix/@PROJECT_NAME@/models:$GAZEBO_MODEL_PATH
+
+_this_package_prefix=$(builtin cd "`dirname "${BASH_SOURCE[0]}"`/../../.." && pwd)
+if [[ ":$GAZEBO_MODEL_PATH:" != *":$_this_package_prefix/share/@PROJECT_NAME@/models:"* ]]; then
+  export GAZEBO_MODEL_PATH=$_this_package_prefix/share/@PROJECT_NAME@/models:$GAZEBO_MODEL_PATH
 fi
 
-if [[ ":$GAZEBO_RESOURCE_PATH:" != *":$_this_package_prefix/@PROJECT_NAME@/models:"* ]]; then
-  export GAZEBO_RESOURCE_PATH=$_this_package_prefix/@PROJECT_NAME@/models:$GAZEBO_RESOURCE_PATH
+if [[ ":$GAZEBO_RESOURCE_PATH:" != *":$_this_package_prefix/share/@PROJECT_NAME@/models:"* ]]; then
+  export GAZEBO_RESOURCE_PATH=$_this_package_prefix/share/@PROJECT_NAME@/models:$GAZEBO_RESOURCE_PATH
 fi
-if [[ ":$GAZEBO_PLUGIN_PATH:" != *":$_this_package_prefix/@PROJECT_NAME@/lib:"* ]]; then
-  export GAZEBO_PLUGIN_PATH=$_this_package_prefix/@PROJECT_NAME@/lib:$GAZEBO_PLUGIN_PATH
+if [[ ":$GAZEBO_PLUGIN_PATH:" != *":$_this_package_prefix/lib:"* ]]; then
+  export GAZEBO_PLUGIN_PATH=$_this_package_prefix/lib:$GAZEBO_PLUGIN_PATH
 fi
 

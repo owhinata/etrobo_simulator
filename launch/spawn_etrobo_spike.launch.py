@@ -36,14 +36,18 @@ def generate_launch_description():
     y = LaunchConfiguration('y', default='0.0')
     Y = LaunchConfiguration('Y', default='0.0')
 
-    # Declare the launch arguments
+    # Declare the launch arguments matching x/y/Y for compatibility with etrobo_world.launch.py
     declare_x_position_cmd = DeclareLaunchArgument(
-        'x_pose', default_value='0.0',
-        description='Specify namespace of the robot')
+        'x', default_value='0.0',
+        description='Specify spawn x position of the robot')
 
     declare_y_position_cmd = DeclareLaunchArgument(
-        'y_pose', default_value='0.0',
-        description='Specify namespace of the robot')
+        'y', default_value='0.0',
+        description='Specify spawn y position of the robot')
+
+    declare_Y_position_cmd = DeclareLaunchArgument(
+        'Y', default_value='0.0',
+        description='Specify spawn yaw (rad) of the robot')
 
     start_gazebo_ros_spawner_cmd = Node(
         package='gazebo_ros',
@@ -61,11 +65,12 @@ def generate_launch_description():
 
     ld = LaunchDescription()
 
-    # Declare the launch options
+    # Declare the launch options for x, y, Y so upstream launch files can pass these
     ld.add_action(declare_x_position_cmd)
     ld.add_action(declare_y_position_cmd)
+    ld.add_action(declare_Y_position_cmd)
 
-    # Add any conditioned actions
+    # Add the actual spawn node
     ld.add_action(start_gazebo_ros_spawner_cmd)
 
     return ld
