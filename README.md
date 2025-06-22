@@ -28,6 +28,14 @@ You can adjust the spawn position using `x_pose` and `y_pose` launch arguments:
 ros2 launch etrobo_simulator etrobo_world.launch.py x_pose:=1.0 y_pose:=2.0
 ```
 
+### Launch L Course
+
+Start the L course simulation with the following command:
+
+```bash
+ros2 launch etrobo_simulator etrobo_world.launch.py x:=-0.4 y:=1.6 Y:=-1.570796327
+```
+
 ## Test
 ```bash
 colcon test --packages-select etrobo_simulator
