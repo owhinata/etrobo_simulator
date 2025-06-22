@@ -32,8 +32,9 @@ def generate_launch_description():
     )
 
     # Launch configuration variables specific to simulation
-    x_pose = LaunchConfiguration('x_pose', default='0.0')
-    y_pose = LaunchConfiguration('y_pose', default='0.0')
+    x = LaunchConfiguration('x', default='0.0')
+    y = LaunchConfiguration('y', default='0.0')
+    Y = LaunchConfiguration('Y', default='0.0')
 
     # Declare the launch arguments
     declare_x_position_cmd = DeclareLaunchArgument(
@@ -50,9 +51,10 @@ def generate_launch_description():
         arguments=[
             '-entity', 'spike',
             '-file', urdf_path,
-            '-x', x_pose,
-            '-y', y_pose,
-            '-z', '0.01'
+            '-x', x,
+            '-y', y,
+            '-z', '0.01',
+            '-Y', Y
         ],
         output='screen',
     )
