@@ -91,12 +91,20 @@ public:
       return;
     }
 
-    // Normalize values to 0-1
+    // Normalize values to 0-1 and publish
     std_msgs::msg::ColorRGBA color_msg;
     color_msg.r = avg_rgb[0] / 255.0f;
     color_msg.g = avg_rgb[1] / 255.0f;
     color_msg.b = avg_rgb[2] / 255.0f;
-    color_msg.a = 1.0f;
+    float brightness = 0.0f;
+    if (channels == 3) {
+      // Compute luminance using Rec. 601 coefficients
+      brightness = 0.299f * avg_rgb[0] + 0.587f * avg_rgb[1] +
+                   0.114f * avg_rgb[2];
+    } else {
+      brightness = avg_rgb[0];
+    }
+    color_msg.a = brightness / 255.0f;
     color_pub_->publish(color_msg);
   }
 
