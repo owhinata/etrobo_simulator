@@ -153,22 +153,22 @@
 
   <link name="head_link">
     <inertial>
-      <origin xyz="-0.020 0 0.172" rpy="0 0 0"/>
+      <origin xyz="-0.020 0 0.168" rpy="0 0 0"/>
       <mass value="0.124"/>
-      <inertia ixx="1.07e-04" ixy="0.0" ixz="1.20e-04" iyy="0.0" iyz="0.0" izz="1.20e-04"/>
+      <inertia ixx="9.59e-05" ixy="0.0" ixz="1.08e-04" iyy="0.0" iyz="0.0" izz="1.20e-04"/>
     </inertial>
 
     <collision>
-      <origin xyz="-0.020 0 0.172" rpy="0 0 0"/>
+      <origin xyz="-0.020 0 0.168" rpy="0 0 0"/>
       <geometry>
-        <box size="0.080  0.072 0.072"/>
+        <box size="0.080  0.072 0.064"/>
       </geometry>
     </collision>
 
     <visual>
-      <origin xyz="-0.020 0 0.172" rpy="0 0 0"/>
+      <origin xyz="-0.020 0 0.168" rpy="0 0 0"/>
       <geometry>
-        <box size="0.080  0.072 0.072"/>
+        <box size="0.080  0.072 0.064"/>
       </geometry>
     </visual>
   </link>
