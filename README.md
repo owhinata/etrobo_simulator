@@ -33,7 +33,7 @@ ros2 launch etrobo_simulator etrobo_world.launch.py x_pose:=1.0 y_pose:=2.0
 Start the L course simulation with the following command:
 
 ```bash
-ros2 launch etrobo_simulator etrobo_world.launch.py x:=-0.4 y:=1.5 Y:=-1.570796327
+ros2 launch etrobo_simulator etrobo_world.launch.py x:=-0.4 y:=1.57 Y:=-1.570796327
 ```
 
 ## Test
