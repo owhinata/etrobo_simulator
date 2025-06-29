@@ -10,6 +10,7 @@ ROS2 + Gazebo simulation environment for ET Robocon.
 ## Build
 ```bash
 source /opt/ros/humble/setup.bash
+source /usr/share/gazebo/setup.bash
 rosdep install --from-paths src --ignore-src -r -y
 colcon build --symlink-install
 source install/setup.bash
@@ -19,7 +20,6 @@ source install/setup.bash
 The `etrobo_world.launch.py` file loads `worlds/etrobo_world.world` and spawns the Spike robot model. Environment hooks automatically configure `GAZEBO_MODEL_PATH` and `GAZEBO_RESOURCE_PATH`.
 
 ```bash
-source /usr/share/gazebo/setup.bash
 ros2 launch etrobo_simulator etrobo_world.launch.py
 ```
 
