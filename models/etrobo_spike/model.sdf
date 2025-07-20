@@ -350,7 +350,7 @@
 
       <!-- New RGB camera on top of body_link -->
       <sensor name="camera_top" type="camera">
-        <pose>-0.020 0 0.2 0 0.523598776 0</pose>
+        <pose>-0.020 0 0.2 0 0.34906585 0</pose>
         <always_on>1</always_on>
         <visualize>false</visualize>
         <update_rate>30</update_rate>
