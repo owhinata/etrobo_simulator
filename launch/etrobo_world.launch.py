@@ -22,6 +22,7 @@ from launch import LaunchDescription
 from launch.actions import IncludeLaunchDescription
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.substitutions import LaunchConfiguration
+from launch.conditions import IfCondition
 
 
 def generate_launch_description():
@@ -32,6 +33,11 @@ def generate_launch_description():
     x = LaunchConfiguration('x', default='0.0')
     y = LaunchConfiguration('y', default='0.0')
     Y = LaunchConfiguration('Y', default='0.0')
+    spawn_bottle = LaunchConfiguration('spawn_bottle', default='true')
+    bottle_x = LaunchConfiguration('bottle_x', default='-0.41')
+    bottle_y = LaunchConfiguration('bottle_y', default='-0.52')
+    bottle_z = LaunchConfiguration('bottle_z', default='0.0')
+    bottle_Y = LaunchConfiguration('bottle_Y', default='0.0')
 
     world = os.path.join(
         get_package_share_directory('etrobo_simulator'),
@@ -71,6 +77,19 @@ def generate_launch_description():
         }.items()
     )
 
+    spawn_bottle_cmd = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource(
+            os.path.join(launch_file_dir, 'spawn_plastic_bottle.launch.py')
+        ),
+        launch_arguments={
+            'x': bottle_x,
+            'y': bottle_y,
+            'z': bottle_z,
+            'Y': bottle_Y
+        }.items(),
+        condition=IfCondition(spawn_bottle)
+    )
+
     ld = LaunchDescription()
 
     # Add the commands to the launch description
@@ -78,5 +97,6 @@ def generate_launch_description():
     ld.add_action(gzclient_cmd)
     ld.add_action(robot_state_publisher_cmd)
     ld.add_action(spawn_etrobo_cmd)
+    ld.add_action(spawn_bottle_cmd)
 
     return ld
